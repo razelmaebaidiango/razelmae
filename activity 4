@@ -1,0 +1,27 @@
+rcds = {}
+
+while True:
+    choice = input('Enter "1" to Add Data, "2" to Delete Data or "3" to End: ')
+    
+    if choice == "1":
+        fam = input("Enter Family Name: ")
+        name = input("Enter First Name: ")
+        
+        rcds[fam] = name 
+        
+        print(f"Added: {fam}: {name}")
+    elif choice == "2":
+        fam = input("Enter Key to Delete: ")
+        
+        if fam in rcds:
+            del rcds[fam]
+            
+            print(f"Deleted: {fam}")
+        else:
+            print("Key is not found in records")
+    elif choice == "3":
+        break
+    else:
+        print('Invalid choice, Please enter "1", "2", or "3"')
+
+print("Final Records: ", rcds)
